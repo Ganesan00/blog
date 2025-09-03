@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ganesan — Personal Blog & Portfolio</title>
+  <meta name="description" content="Lifestyle, coding, and travel notes. Tips, tutorials, and stories by Ganesan." />
+  <meta name="author" content="Ganesan" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ganesan — Personal Blog & Portfolio" />
+  <meta property="og:description" content="Lifestyle, coding, and travel notes. Tips, tutorials, and stories by Ganesan." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1400&auto=format&fit=crop" />
+  <meta property="og:url" content="https://example.com" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ganesan — Personal Blog & Portfolio" />
+  <meta name="twitter:description" content="Lifestyle, coding, and travel notes." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1400&auto=format&fit=crop" />
+
+  <!-- Tailwind CSS (Play CDN for quick start). For production, compile Tailwind. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind on-the-fly config
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfeff', 100:'#cffafe', 200:'#a5f3fc', 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2', 700:'#0e7490', 800:'#155e75', 900:'#164e63'
+            },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Optional: nicer focus ring */
+    :focus-visible { outline: 3px solid rgba(6,182,212,.55); outline-offset: 2px; border-radius: .5rem; }
+  </style>
+</head>
+<body class="bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
+  <!-- Top Bar -->
+  <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-slate-900/60 border-b border-slate-200/70 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 font-bold text-xl">
+        <span class="inline-flex h-9 w-9 rounded-xl bg-gradient-to-br from-brand-300 to-brand-600"></span>
+        <span>Ganesan</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#blog" class="hover:text-brand-600">Blog</a>
+        <a href="#about" class="hover:text-brand-600">About</a>
+        <a href="#newsletter" class="hover:text-brand-600">Newsletter</a>
+        <a href="#contact" class="hover:text-brand-600">Contact</a>
+      </nav>
+      <a href="#contact" class="hidden sm:inline-flex rounded-xl px-4 py-2 bg-brand-600 text-white hover:bg-brand-700 transition">Work with me</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-brand-700 bg-brand-100 rounded-full px-3 py-1">Lifestyle • Coding • Travel</span>
+        <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold leading-tight">I write about code, habits, and places that spark ideas.</h1>
+        <p class="mt-4 text-slate-600 dark:text-slate-300 max-w-xl">Actionable tutorials, honest reviews, and behind‑the‑scenes notes from a software developer building products and traveling light.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#newsletter" class="rounded-xl px-4 py-2 bg-brand-600 text-white hover:bg-brand-700">Join Newsletter</a>
+          <a href="#blog" class="rounded-xl px-4 py-2 border border-slate-200 dark:border-slate-800 hover:border-brand-400">Read the Blog</a>
+        </div>
+      </div>
+      <div class="relative">
+        <img class="rounded-2xl shadow-lg ring-1 ring-black/5" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" alt="Author at desk" />
+        <div class="absolute -bottom-5 -right-5 bg-white dark:bg-slate-900 rounded-xl shadow-lg ring-1 ring-black/5 p-4 flex items-center gap-3">
+          <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=300&auto=format&fit=crop" alt="Avatar" />
+          <div>
+            <p class="text-sm font-semibold">Ganesan</p>
+            <p class="text-xs text-slate-500">Full‑stack dev & writer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Post -->
+  <section class="py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-3 gap-6">
+        <article class="lg:col-span-2 relative overflow-hidden rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800">
+          <img class="w-full h-80 object-cover" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600&auto=format&fit=crop" alt="Featured post" />
+          <div class="p-6">
+            <a href="#post" class="inline-flex text-xs font-semibold tracking-wide uppercase text-brand-700 bg-brand-100 rounded-full px-3 py-1">Featured</a>
+            <h2 class="mt-3 text-2xl font-bold leading-snug"><a href="#post">10 High‑Protein Breakfasts That Keep You Focused While Coding</a></h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-300">Quick meals I actually make on busy sprint days. All under 15 minutes.</p>
+            <div class="mt-4 flex items-center gap-3 text-sm text-slate-500">
+              <span>Aug 20, 2025</span>
+              <span>•</span>
+              <span>6 min read</span>
+            </div>
+          </div>
+        </article>
+        <!-- Affiliate Highlight Card -->
+        <aside class="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 p-6 bg-gradient-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-950">
+          <h3 class="text-lg font-bold">Tools I Love (Affiliates)</h3>
+          <ul class="mt-4 space-y-4">
+            <li class="flex items-center justify-between gap-3">
+              <div>
+                <p class="font-semibold">Noise‑Canceling Headphones</p>
+                <p class="text-sm text-slate-500">Deep work essential</p>
+              </div>
+              <a href="#" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white dark:bg-white dark:text-slate-900">Buy</a>
+            </li>
+            <li class="flex items-center justify-between gap-3">
+              <div>
+                <p class="font-semibold">Mechanical Keyboard</p>
+                <p class="text-sm text-slate-500">Compact, tactile</p>
+              </div>
+              <a href="#" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white dark:bg-white dark:text-slate-900">Buy</a>
+            </li>
+            <li class="flex items-center justify-between gap-3">
+              <div>
+                <p class="font-semibold">Travel Backpack</p>
+                <p class="text-sm text-slate-500">Carry‑on friendly</p>
+              </div>
+              <a href="#" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white dark:bg-white dark:text-slate-900">Buy</a>
+            </li>
+          </ul>
+          <p class="mt-4 text-xs text-slate-500">Disclosure: Some links are affiliate. I may earn if you purchase.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Grid + Sidebar -->
+  <section id="blog" class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-10">
+      <!-- Posts -->
+      <div class="lg:col-span-2 space-y-8">
+        <!-- Post Card -->
+        <article class="rounded-2xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800">
+          <img class="w-full h-64 object-cover" src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=1600&auto=format&fit=crop" alt="Travel" />
+          <div class="p-6">
+            <a href="#" class="text-xs font-semibold uppercase tracking-wide text-brand-700">Travel</a>
+            <h3 class="mt-2 text-xl font-bold"><a href="#post">How I Plan 3‑Day Coding Trips to New Cities</a></h3>
+            <p class="mt-2 text-slate-600 dark:text-slate-300">Carry‑on only, good coffee, great coworking. My repeatable system.</p>
+            <div class="mt-4 flex items-center gap-3 text-sm text-slate-500"><span>Aug 17, 2025</span><span>•</span><span>8 min read</span></div>
+          </div>
+        </article>
+        <!-- Post Card -->
+        <article class="rounded-2xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800">
+          <img class="w-full h-64 object-cover" src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1600&auto=format&fit=crop" alt="Coding" />
+          <div class="p-6">
+            <a href="#" class="text-xs font-semibold uppercase tracking-wide text-brand-700">Coding</a>
+            <h3 class="mt-2 text-xl font-bold"><a href="#post">My 5‑Block Morning for Deep Work (No Apps)</a></h3>
+            <p class="mt-2 text-slate-600 dark:text-slate-300">A simple routine that actually survives busy weeks.</p>
+            <div class="mt-4 flex items-center gap-3 text-sm text-slate-500"><span>Aug 12, 2025</span><span>•</span><span>5 min read</span></div>
+          </div>
+        </article>
+        <!-- Post Card -->
+        <article class="rounded-2xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800">
+          <img class="w-full h-64 object-cover" src="https://images.unsplash.com/photo-1457383457550-47a5cfdbab17?q=80&w=1600&auto=format&fit=crop" alt="Food" />
+          <div class="p-6">
+            <a href="#" class="text-xs font-semibold uppercase tracking-wide text-brand-700">Food</a>
+            <h3 class="mt-2 text-xl font-bold"><a href="#post">Fuel for Hackathons: Easy Meals You Can Pack</a></h3>
+            <p class="mt-2 text-slate-600 dark:text-slate-300">Zero‑mess ideas that keep energy stable.</p>
+            <div class="mt-4 flex items-center gap-3 text-sm text-slate-500"><span>Aug 04, 2025</span><span>•</span><span>4 min read</span></div>
+          </div>
+        </article>
+
+        <!-- Pagination -->
+        <nav class="flex items-center justify-between" aria-label="Pagination">
+          <a href="#" class="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800">← Newer</a>
+          <div class="flex items-center gap-1">
+            <a class="px-3 py-2 rounded-lg bg-brand-600 text-white" href="#">1</a>
+            <a class="px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-800" href="#">2</a>
+            <a class="px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-800" href="#">3</a>
+          </div>
+          <a href="#" class="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800">Older →</a>
+        </nav>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="space-y-8">
+        <!-- Search -->
+        <div class="p-4 rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800">
+          <label class="text-sm font-semibold">Search</label>
+          <input type="text" placeholder="Find articles…" class="mt-2 w-full rounded-xl border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 border px-3 py-2" />
+        </div>
+        <!-- Categories -->
+        <div class="p-4 rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800">
+          <h4 class="font-bold">Categories</h4>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="#" class="px-3 py-1.5 rounded-full bg-brand-100 text-brand-800 text-sm">Travel</a>
+            <a href="#" class="px-3 py-1.5 rounded-full bg-brand-100 text-brand-800 text-sm">Coding</a>
+            <a href="#" class="px-3 py-1.5 rounded-full bg-brand-100 text-brand-800 text-sm">Food</a>
+            <a href="#" class="px-3 py-1.5 rounded-full bg-brand-100 text-brand-800 text-sm">Gear</a>
+          </div>
+        </div>
+        <!-- Popular Posts -->
+        <div class="p-4 rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800">
+          <h4 class="font-bold">Popular</h4>
+          <ul class="mt-3 space-y-3 text-sm">
+            <li><a class="hover:text-brand-600" href="#post">The Backpack System I Use</a></li>
+            <li><a class="hover:text-brand-600" href="#post">VSCode Settings for Speed</a></li>
+            <li><a class="hover:text-brand-600" href="#post">Best Coffee Near Coworking</a></li>
+          </ul>
+        </div>
+        <!-- Newsletter -->
+        <div id="newsletter" class="p-4 rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-gradient-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-950">
+          <h4 class="font-bold">Join the newsletter</h4>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">1–2 emails/month. No spam.</p>
+          <form action="#" class="mt-3 space-y-3">
+            <input type="email" required placeholder="you@example.com" class="w-full rounded-xl border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 border px-3 py-2" />
+            <button class="w-full rounded-xl px-4 py-2 bg-brand-600 text-white hover:bg-brand-700">Subscribe</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 border-t border-slate-200/70 dark:border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-10 items-start">
+      <img class="rounded-2xl shadow ring-1 ring-black/5 md:col-span-1" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop" alt="Portrait" />
+      <div class="md:col-span-2">
+        <h2 class="text-3xl font-extrabold">Hey, I’m Ganesan 👋</h2>
+        <p class="mt-3 text-slate-600 dark:text-slate-300">I’m a software developer who loves building fast products and writing practical guides. Here you’ll find my notes on coding, lifestyle design, and travel.
+        </p>
+        <div class="mt-6 grid sm:grid-cols-3 gap-4">
+          <div class="p-4 rounded-xl ring-1 ring-slate-200 dark:ring-slate-800"><p class="text-2xl font-bold">100k+</p><p class="text-sm text-slate-500">Monthly readers</p></div>
+          <div class="p-4 rounded-xl ring-1 ring-slate-200 dark:ring-slate-800"><p class="text-2xl font-bold">50+</p><p class="text-sm text-slate-500">Published posts</p></div>
+          <div class="p-4 rounded-xl ring-1 ring-slate-200 dark:ring-slate-800"><p class="text-2xl font-bold">12</p><p class="text-sm text-slate-500">Countries visited</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / CTA -->
+  <section id="contact" class="py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-extrabold">Consulting, collabs, or questions?</h2>
+      <p class="mt-2 text-slate-600 dark:text-slate-300">Brands and founders: I do audits, landing pages, and content partnerships.</p>
+      <form class="mt-6 grid sm:grid-cols-2 gap-3 text-left">
+        <input type="text" placeholder="Name" class="rounded-xl border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 border px-3 py-2" required />
+        <input type="email" placeholder="Email" class="rounded-xl border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 border px-3 py-2" required />
+        <textarea placeholder="Message" class="sm:col-span-2 rounded-xl border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 border px-3 py-2 h-32" required></textarea>
+        <button class="sm:col-span-2 rounded-xl px-4 py-2 bg-brand-600 text-white hover:bg-brand-700">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200/70 dark:border-slate-800 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 text-sm">
+      <div>
+        <p class="font-bold">Ganesan</p>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">Notes on software, lifestyle, and travel. New posts every week.</p>
+      </div>
+      <div>
+        <p class="font-bold">Links</p>
+        <ul class="mt-2 space-y-2">
+          <li><a href="#blog" class="hover:text-brand-600">Blog</a></li>
+          <li><a href="#about" class="hover:text-brand-600">About</a></li>
+          <li><a href="#newsletter" class="hover:text-brand-600">Newsletter</a></li>
+          <li><a href="#contact" class="hover:text-brand-600">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-bold">Follow</p>
+        <ul class="mt-2 space-y-2">
+          <li><a href="#" class="hover:text-brand-600">Twitter/X</a></li>
+          <li><a href="#" class="hover:text-brand-600">Instagram</a></li>
+          <li><a href="#" class="hover:text-brand-600">LinkedIn</a></li>
+          <li><a href="#" class="hover:text-brand-600">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 text-center text-xs text-slate-500">© 2025 Ganesan. All rights reserved.</div>
+  </footer>
+
+  <!-- Optional: Single Post Anchor Section (same page mock) -->
+  <section id="post" class="py-16 border-t border-slate-200/70 dark:border-slate-800">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-xs uppercase tracking-wider text-brand-700">Post</p>
+      <h1 class="mt-2 text-3xl font-extrabold">10 High‑Protein Breakfasts That Keep You Focused While Coding</h1>
+      <div class="mt-2 text-sm text-slate-500">Aug 20, 2025 • 6 min read</div>
+      <img class="mt-6 rounded-2xl ring-1 ring-black/5" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1600&auto=format&fit=crop" alt="Breakfast" />
+      <div class="mt-6 space-y-4 text-slate-700 dark:text-slate-200">
+        <p>Keeping energy steady matters more than caffeine spikes. Here are my go‑tos that take under 15 minutes, travel well, and don’t crash you mid‑standup.</p>
+        <h3 class="text-xl font-bold">1) Greek Yogurt Bowl</h3>
+        <p>Yogurt + berries + granola + nuts. 30g protein in 3 minutes.</p>
+        <h3 class="text-xl font-bold">2) Paneer Scramble</h3>
+        <p>Spiced paneer with veggies. Packs well for coworking days.</p>
+        <h3 class="text-xl font-bold">Affiliate Picks</h3>
+        <ul class="list-disc pl-6">
+          <li>Protein shaker — <a href="#" class="text-brand-700 underline">Buy</a></li>
+          <li>Meal prep boxes — <a href="#" class="text-brand-700 underline">Buy</a></li>
+        </ul>
+        <p class="italic text-slate-500">This is a static demo. Wire to your CMS when ready.</p>
+      </div>
+      <div class="mt-8 flex items-center gap-4">
+        <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=300&auto=format&fit=crop" alt="Avatar" />
+        <div>
+          <p class="font-semibold">Ganesan</p>
+          <p class="text-sm text-slate-500">Full‑stack dev & writer</p>
+        </div>
+      </div>
+      <div class="mt-8">
+        <a href="#blog" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800">← Back to Blog</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
