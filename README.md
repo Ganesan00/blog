@@ -1,0 +1,2 @@
+# blog
+index page only
